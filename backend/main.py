@@ -648,7 +648,7 @@ async def root():
 @app.post("/api/agent/bard/chat", response_model=BardResponse)
 async def run_bard(request: AgentRequest):
     """main entry to run Bard the storyteller
-    the state and checkpoints and handled internally
+    the state and checkpoints are handled internally
     """
     if bard_instance is None:
         raise HTTPException(status_code=500, detail="Chatbot is not initialized")
